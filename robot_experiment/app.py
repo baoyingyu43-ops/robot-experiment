@@ -10,6 +10,42 @@ BASE_DIR   = Path(__file__).parent
 IMAGES_DIR = BASE_DIR / "images"
 AUDIO_DIR  = BASE_DIR / "audio"
 
+def find_file(folder, stem, exts):
+    """查找文件：支持两种结构：
+    1. 直接文件：audio/cognitive.wav 或 images/A01.png.jpg
+    2. 文件夹内：audio/cognitive.wav/Q6_HH_M.mp3.wav（文件夹以 stem 命名，里面任意文件）
+    """
+    if not folder.exists():
+        return None
+
+    def _search(directory, inside_stem_dir=False):
+        for f in sorted(directory.iterdir()):
+            if f.is_file():
+                if inside_stem_dir:
+                    # 在 stem 命名的文件夹里，接受任何音频/图片文件
+                    for ext in exts:
+                        if f.name.endswith(ext):
+                            return f
+                    return f  # 兜底返回文件夹里第一个文件
+                name = f.name
+                for ext in exts:
+                    if name == stem + ext or name.startswith(stem + ext + "."):
+                        return f
+                if name.startswith(stem) and name != stem:
+                    return f
+        subdirs = sorted(
+            [d for d in directory.iterdir() if d.is_dir()],
+            key=lambda d: (0 if d.name.startswith(stem) else 1, d.name)
+        )
+        for sub in subdirs:
+            result = _search(sub, inside_stem_dir=sub.name.startswith(stem))
+            if result:
+                return result
+        return None
+
+    return _search(folder)
+
+
 st.set_page_config(
     page_title="机器人声音外观匹配研究",
     page_icon="🤖",
@@ -180,11 +216,12 @@ def page_audio_check():
     st.markdown('<div class="page-header"><h1>🎧 音频检查</h1><p>请确认能清晰听到音频后再开始</p></div>',
                 unsafe_allow_html=True)
     st.info("请调整音量至适中，播放测试音频：")
-    p = AUDIO_DIR / "cognitive.wav"
-    if p.is_file():
-        st.audio(p.read_bytes(), format="audio/wav")
+    p = find_file(AUDIO_DIR, "cognitive", [".wav", ".mp3"])
+    if p:
+        fmt = "audio/mp3" if str(p).endswith(".mp3") else "audio/wav"
+        st.audio(p.read_bytes(), format=fmt)
     else:
-        st.warning(f"⚠️ 未找到音频文件：{p}，请确认已上传到 audio/ 文件夹。")
+        st.warning(f"⚠️ 未找到音频文件（cognitive.wav），请确认已上传到 audio/ 文件夹。")
     ans = st.radio("您能清晰听到音频吗？", ["✅ 是，可以听到","❌ 否，听不到"])
     if "✅" in ans:
         if st.button("确认，开始实验 →"):
@@ -206,19 +243,20 @@ def page_experiment():
     st.markdown(f"**{SCENE_LABELS.get(stim['scene_type'],'')}**")
     st.markdown(f'<div class="scene-card">{stim["scene_text"]}</div>', unsafe_allow_html=True)
 
-    img = IMAGES_DIR / f"{stim['appearance_id']}.png"
-    if img.is_file():
+    img = find_file(IMAGES_DIR, stim['appearance_id'], [".png", ".jpg", ".jpeg"])
+    if img and img.is_file():
         c1,c2,c3 = st.columns([1,2,1])
         with c2: st.image(str(img), use_container_width=True)
     else:
         st.warning(f"⚠️ 图片未找到：images/{stim['appearance_id']}.png")
 
     st.markdown('<div class="audio-hint">👂 请先播放音频，听完后再作答 ↓</div>', unsafe_allow_html=True)
-    aud = AUDIO_DIR / f"{stim['voice_id']}.wav"
-    if aud.is_file():
-        st.audio(aud.read_bytes(), format="audio/wav")
+    aud = find_file(AUDIO_DIR, stim['voice_id'], [".wav", ".mp3"])
+    if aud and aud.is_file():
+        fmt = "audio/mp3" if str(aud).endswith(".mp3") else "audio/wav"
+        st.audio(aud.read_bytes(), format=fmt)
     else:
-        st.warning(f"⚠️ 音频未找到：audio/{stim['voice_id']}.wav")
+        st.warning(f"⚠️ 音频未找到：audio/{stim['voice_id']}.*，请确认已上传。")
 
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
     st.markdown("#### 请根据视听感受评分（1=完全不同意，7=完全同意）")
