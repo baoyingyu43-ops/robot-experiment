@@ -98,47 +98,47 @@ html, body, [class*="css"] { font-family: 'Noto Sans SC', sans-serif; }
 # ── 刺激材料（A卷18组）────────────────────────────────────────
 STIMULI = [
     {"id":"S01","scene_type":"cognitive","appearance_id":"A01","voice_id":"cognitive",
-     "scene_text":"您正在政务服务中心办理社保手续，需要机器人帮助您快速查询所需材料清单和办理流程，要求信息准确、回答简洁。"},
+     "scene_text":"您正在家中准备出门，希望机器人帮助您快速确认今天的日程安排，并提醒需要关闭的家用电器。此时您主要希望机器人回答准确、操作高效、指令清晰。"},
     {"id":"S02","scene_type":"cognitive","appearance_id":"A03","voice_id":"emotional",
-     "scene_text":"您正在政务服务中心办理社保手续，需要机器人帮助您快速查询所需材料清单和办理流程，要求信息准确、回答简洁。"},
+     "scene_text":"您正在家中准备出门，希望机器人帮助您快速确认今天的日程安排，并提醒需要关闭的家用电器。此时您主要希望机器人回答准确、操作高效、指令清晰。"},
     {"id":"S03","scene_type":"cognitive","appearance_id":"A05","voice_id":"balanced",
-     "scene_text":"您正在政务服务中心办理社保手续，需要机器人帮助您快速查询所需材料清单和办理流程，要求信息准确、回答简洁。"},
+     "scene_text":"您正在家中准备出门，希望机器人帮助您快速确认今天的日程安排，并提醒需要关闭的家用电器。此时您主要希望机器人回答准确、操作高效、指令清晰。"},
     {"id":"S04","scene_type":"cognitive","appearance_id":"A02","voice_id":"cognitive",
-     "scene_text":"您正在政务服务中心办理社保手续，需要机器人帮助您快速查询所需材料清单和办理流程，要求信息准确、回答简洁。"},
+     "scene_text":"您正在家中准备出门，希望机器人帮助您快速确认今天的日程安排，并提醒需要关闭的家用电器。此时您主要希望机器人回答准确、操作高效、指令清晰。"},
     {"id":"S05","scene_type":"cognitive","appearance_id":"A04","voice_id":"emotional",
-     "scene_text":"您正在政务服务中心办理社保手续，需要机器人帮助您快速查询所需材料清单和办理流程，要求信息准确、回答简洁。"},
+     "scene_text":"您正在家中准备出门，希望机器人帮助您快速确认今天的日程安排，并提醒需要关闭的家用电器。此时您主要希望机器人回答准确、操作高效、指令清晰。"},
     {"id":"S06","scene_type":"cognitive","appearance_id":"A06","voice_id":"balanced",
-     "scene_text":"您正在政务服务中心办理社保手续，需要机器人帮助您快速查询所需材料清单和办理流程，要求信息准确、回答简洁。"},
+     "scene_text":"您正在家中准备出门，希望机器人帮助您快速确认今天的日程安排，并提醒需要关闭的家用电器。此时您主要希望机器人回答准确、操作高效、指令清晰。"},
     {"id":"S07","scene_type":"mixed","appearance_id":"A04","voice_id":"cognitive",
-     "scene_text":"您正在医院咨询慢性病用药报销政策，希望机器人既能准确解释政策条款，也能以较为亲和的方式回应您的疑问和担忧。"},
+     "scene_text":"家中老人需要长期服药，但有时会忘记服药时间。您希望机器人不仅能够准确提醒用药时间、剂量和注意事项，也能以温和、耐心的方式进行关怀和提示。"},
     {"id":"S08","scene_type":"mixed","appearance_id":"A06","voice_id":"emotional",
-     "scene_text":"您正在医院咨询慢性病用药报销政策，希望机器人既能准确解释政策条款，也能以较为亲和的方式回应您的疑问和担忧。"},
+     "scene_text":"家中老人需要长期服药，但有时会忘记服药时间。您希望机器人不仅能够准确提醒用药时间、剂量和注意事项，也能以温和、耐心的方式进行关怀和提示。"},
     {"id":"S09","scene_type":"mixed","appearance_id":"A02","voice_id":"balanced",
-     "scene_text":"您正在医院咨询慢性病用药报销政策，希望机器人既能准确解释政策条款，也能以较为亲和的方式回应您的疑问和担忧。"},
+     "scene_text":"家中老人需要长期服药，但有时会忘记服药时间。您希望机器人不仅能够准确提醒用药时间、剂量和注意事项，也能以温和、耐心的方式进行关怀和提示。"},
     {"id":"S10","scene_type":"mixed","appearance_id":"A05","voice_id":"cognitive",
-     "scene_text":"您正在医院咨询慢性病用药报销政策，希望机器人既能准确解释政策条款，也能以较为亲和的方式回应您的疑问和担忧。"},
+     "scene_text":"家中老人需要长期服药，但有时会忘记服药时间。您希望机器人不仅能够准确提醒用药时间、剂量和注意事项，也能以温和、耐心的方式进行关怀和提示。"},
     {"id":"S11","scene_type":"mixed","appearance_id":"A01","voice_id":"emotional",
-     "scene_text":"您正在医院咨询慢性病用药报销政策，希望机器人既能准确解释政策条款，也能以较为亲和的方式回应您的疑问和担忧。"},
+     "scene_text":"家中老人需要长期服药，但有时会忘记服药时间。您希望机器人不仅能够准确提醒用药时间、剂量和注意事项，也能以温和、耐心的方式进行关怀和提示。"},
     {"id":"S12","scene_type":"mixed","appearance_id":"A03","voice_id":"balanced",
-     "scene_text":"您正在医院咨询慢性病用药报销政策，希望机器人既能准确解释政策条款，也能以较为亲和的方式回应您的疑问和担忧。"},
+     "scene_text":"家中老人需要长期服药，但有时会忘记服药时间。您希望机器人不仅能够准确提醒用药时间、剂量和注意事项，也能以温和、耐心的方式进行关怀和提示。"},
     {"id":"S13","scene_type":"emotional","appearance_id":"A06","voice_id":"cognitive",
-     "scene_text":"您独自在外就医，因手续复杂感到焦虑，希望机器人能耐心陪伴解释，给予情绪上的安抚和鼓励。"},
+     "scene_text":"您一个人在家，最近因为工作或生活压力感到疲惫和低落，希望机器人能够以亲切、理解的方式陪您说说话，给予安慰和情绪支持。"},
     {"id":"S14","scene_type":"emotional","appearance_id":"A02","voice_id":"emotional",
-     "scene_text":"您独自在外就医，因手续复杂感到焦虑，希望机器人能耐心陪伴解释，给予情绪上的安抚和鼓励。"},
+     "scene_text":"您一个人在家，最近因为工作或生活压力感到疲惫和低落，希望机器人能够以亲切、理解的方式陪您说说话，给予安慰和情绪支持。"},
     {"id":"S15","scene_type":"emotional","appearance_id":"A04","voice_id":"balanced",
-     "scene_text":"您独自在外就医，因手续复杂感到焦虑，希望机器人能耐心陪伴解释，给予情绪上的安抚和鼓励。"},
+     "scene_text":"您一个人在家，最近因为工作或生活压力感到疲惫和低落，希望机器人能够以亲切、理解的方式陪您说说话，给予安慰和情绪支持。"},
     {"id":"S16","scene_type":"emotional","appearance_id":"A03","voice_id":"cognitive",
-     "scene_text":"您独自在外就医，因手续复杂感到焦虑，希望机器人能耐心陪伴解释，给予情绪上的安抚和鼓励。"},
+     "scene_text":"您一个人在家，最近因为工作或生活压力感到疲惫和低落，希望机器人能够以亲切、理解的方式陪您说说话，给予安慰和情绪支持。"},
     {"id":"S17","scene_type":"emotional","appearance_id":"A05","voice_id":"emotional",
-     "scene_text":"您独自在外就医，因手续复杂感到焦虑，希望机器人能耐心陪伴解释，给予情绪上的安抚和鼓励。"},
+     "scene_text":"您一个人在家，最近因为工作或生活压力感到疲惫和低落，希望机器人能够以亲切、理解的方式陪您说说话，给予安慰和情绪支持。"},
     {"id":"S18","scene_type":"emotional","appearance_id":"A01","voice_id":"balanced",
-     "scene_text":"您独自在外就医，因手续复杂感到焦虑，希望机器人能耐心陪伴解释，给予情绪上的安抚和鼓励。"},
+     "scene_text":"您一个人在家，最近因为工作或生活压力感到疲惫和低落，希望机器人能够以亲切、理解的方式陪您说说话，给予安慰和情绪支持。"},
 ]
 
 SCENE_LABELS = {
-    "cognitive": "🧠 认知主导型场景",
-    "mixed":     "⚖️ 混合需求型场景",
-    "emotional": "💛 情感主导型场景"
+    "cognitive": "🧠 认知主导型｜家庭日程与家电控制",
+    "mixed":     "⚖️ 混合需求型｜老人用药提醒与健康关怀",
+    "emotional": "💛 情感主导型｜独自在家的情绪陪伴"
 }
 
 def init_state():
@@ -195,7 +195,7 @@ def page_consent():
 
 **设备要求**：请使用耳机或音箱，在安静环境中完成。
 """)
-    if st.checkbox("✅ 我已阅读上述说明，同意参与本研究"):
+    if st.checkbox("我已阅读上述说明，同意参与本研究"):
         if st.button("开始参与 →"):
             st.session_state.page = "info"; st.rerun()
 
@@ -203,13 +203,16 @@ def page_consent():
 def page_info():
     st.markdown('<div class="page-header"><h1>基本信息</h1><p>仅用于样本描述，不涉及隐私</p></div>',
                 unsafe_allow_html=True)
-    g  = st.radio("您的性别", ["男","女","其他/不便透露"])
-    a  = st.radio("您的年龄段", ["18岁以下","18–25岁","26–35岁","36–45岁","46岁及以上"])
+    g  = st.radio("您的性别", ["男","女","其他/不便透露"], index=None)
+    a  = st.radio("您的年龄段", ["18岁以下","18–25岁","26–35岁","36–45岁","46岁及以上"], index=None)
     u  = st.radio("是否使用过智能语音助手或服务机器人？",
-                  ["经常使用","偶尔使用","很少使用","从未使用"])
+                  ["经常使用","偶尔使用","很少使用","从未使用"], index=None)
     if st.button("下一步 →"):
-        st.session_state.gender=g; st.session_state.age_group=a; st.session_state.ai_use=u
-        st.session_state.page="audio_check"; st.rerun()
+        if not all([g, a, u]):
+            st.warning("请完整填写所有选项后再继续。")
+        else:
+            st.session_state.gender=g; st.session_state.age_group=a; st.session_state.ai_use=u
+            st.session_state.page="audio_check"; st.rerun()
 
 # ── 音频检查 ──────────────────────────────────────────────────
 def page_audio_check():
